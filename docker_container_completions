@@ -1,0 +1,20 @@
+#!/bin/sh
+
+_docker_completion_opts=`docker ps -q`
+_docker_completion_opts+=`printf ' \n'`
+
+_docker_completion_opts+=`docker ps -aq --format '{{.Names}}'`
+	
+complete -W "${_docker_completion_opts}" 'docker'
+complete -W "${_docker_completion_opts}" 'drm'
+complete -W "${_docker_completion_opts}" 'dstop'
+complete -W "${_docker_completion_opts}" 'dlog'
+complete -W "${_docker_completion_opts}" 'drmi'
+complete -W "${_docker_completion_opts}" 'drmii'
+complete -W "${_docker_completion_opts}" 'docker start'
+complete -W "${_docker_completion_opts}" 'docker rm'
+complete -W "${_docker_completion_opts}" 'dlog'
+complete -W "${_docker_completion_opts}" 'dlog -f'
+complete -W "${_docker_completion_opts}" 'de'
+complete -W "${_docker_completion_opts}" 'docker stop'
+
